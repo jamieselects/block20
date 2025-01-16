@@ -18,9 +18,8 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   //convert form submission string to number
-  const numberValue = numberInput.value.trim();
-  const numberToAdd = Number(numberValue);
-  numberBank.push(numberToAdd);
+  const numberValue = Number(numberInput.value.trim());
+  numberBank.push(numberValue);
 
   //call update numberBank function to update the doc object
   updateNumberBank();
@@ -28,13 +27,13 @@ form.addEventListener("submit", (event) => {
 });
 
 //funtion to update the numberBank
-const updateNumberBank = () => {
+function updateNumberBank() {
   numberBankNumbers.innerHTML = "";
   numberBankNumbers.textContent = numberBank.join(", ");
 }
 
 //function to update the evens / odds
-const updateSortedNumbers = () => {
+function updateSortedNumbers () {
   oddsBank.textContent = odds.join(", ");
   evensBank.textContent = evens.join(", ");
 }
